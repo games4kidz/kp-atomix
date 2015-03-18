@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>kp-atomix</title>
+<link href="atomix.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="atomix">
+	<div id="arena-container">
+		<div id="arena"></div>
+	</div>
+	<div id="control-container">
+		<div id="molecule-container">
+			<div id="molecule"></div>
+		</div>
+		<div id="move-controls">
+			<strong>Schritt-Nr.: <span id="move-no">&nbsp;</span></strong>
+			<p><a href="#" id="history-undo">Schritt zurück</a></p>
+			<p><a href="#" id="history-redo">Schritt vor</a></p>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="controls">
+		<form>
+			<div id="selectors">
+				<span id="levelset-selector-span"></span>
+				<span id="level-selector-span"></span>
+				<p>
+				<a href="#" id="prev-level">Voriger Level</a>
+				<a href="#" id="next-level">Nächster Level</a>
+				<a href="#" id="history-reset">Level neu starten</a>
+				<a href="#" id="bookmark-link">Spielstand speichern</a>
+				<a href="#" id="about-button">Anleitung</a>
+				</p>
+			</div>
+			<div id="levelset-credits">
+				Level-Set: <span id="levelset-credits-name">&nbsp;</span>
+				&nbsp;&nbsp;
+				Copyright: <span id="levelset-credits-credit">&nbsp;</span>
+				&nbsp;&nbsp;
+				Lizenz: <span id="levelset-credits-license">&nbsp;</span>
+			</div>
+		</form>
+		</div>
+		<div id="game-credits">
+			<strong>kp-atomix</strong>, eine freie Javascript Version des<br /><strong>KDE</strong>-Spiels <strong>katomic</strong>
+		</div>
+	</div>
+</div>
+
+
+<!-- start dialogs -->
+
+<div id="about-dialog">
+	<h3>kp-atomix</h3>
+	<p>Bei diesem Spiel geht es darum, die Atome auf dem Spielfeld zu verschieben und zu einem Molekül zusammenzusetzen.</p>
+	<p>Um ein Atom zu verschieben, klicke es einmal an, um es auszuwählen. Danach kannst du es mit den Pfeilen bewegen, die erscheinen, wenn das Atom ausgewählt ist.</p>
+	<p><strong>Sei vorsichtig! Wenn sich ein Atom erstmal bewegt, hält es erst an, wenn es auf ein anderes Atom oder die Wand trifft.</strong></p>
+	<p>Um dir die Arbeit zu erleichtern, wird rechts das fertige Molekül angezeigt. Du kannst die Molekülvorschau über das Spielfeld schieben, um zu sehen, wo es Platz hat. So kannst du enscheiden, wo du das Molekül zusammenbaust. Das ist an manchen Stellen einfacher als an anderen Stellen.</p>
+	<p>Die beste Lösung für jeden Level ist die, die am wenigsten Schritte braucht.</p>
+	<p>Du kannst deine Lösung oder einen Zwischenstand jederzeit als Lesezeichen oder Favorit speichern.</p>
+	<p class="buttons">
+		<input id="about-dialog-button-close" type="button" value="Schliessen" />
+	</p>
+</div>
+
+<div id="success-dialog">
+	<h3>Gut gemacht!</h3>
+	<form id="success-dialog-form">
+	<p id="success-dialog-message">&nbsp;</p>
+	<p>
+		<strong>Trage hier deinen Spitznamen ein</strong>
+		<br />
+		<input type="text" value='Mein Spitzname' class="center" id="success-dialog-user" />
+	</p>
+	<p class="buttons">
+		<input id="success-dialog-button-close" type="button" value="Schliessen" />
+		<input style="display:none" id="success-dialog-button-save" type="button" value="Speichern" />
+	</p>
+	</form>
+</div>
+
+
+<div id="bookmark-dialog">
+	<h3>Spielstand speichern</h3>
+	<form id="bookmark-dialog-form">
+	<p id="bookmark-dialog-message">
+		Speichere den Spielstand, in dem zu diesen Link als Lesezeichen oder Favorit speicherst:
+	</p>
+	<p><a id="bookmark-dialog-link">&nbsp;</a></p>
+	<p id="bookmark-dialog-message">
+		<strong>Entweder:</strong> klickst du mit der anderen Maustaste und wählst 'Zu Favoriten hinzufügen...' oder 'Als Lesezeichen speichern...' im Menü, das erscheint.
+		<br /><br />
+		<strong>Oder:</strong> du klickst auf den Link und speicherst die Seite danach als Lesezeichen oder Favorit.
+	</p>
+	<p class="buttons">
+		<input id="bookmark-dialog-button-close" type="button" value="Schliessen" />
+	</p>
+	</form>
+</div>
+
+<!-- end dialogs -->
+
+<!-- start tail_scripts -->
+<script src="js/atomix.js"></script>
+<script src="js/katomic.js"></script>
+<script src="js/extras.js"></script>
+<!-- end tail scripts -->
+<script>
+	window.onload = function () {
+		KP_ATOMIX.init();
+	}
+	window.onunload = function(){}
+</script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background: url(images/background.png) no-repeat;
+	color: #ffffff;
+}
+
+#atomix {
+	position: relative;
+	width:900px;
+	height:600px;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	background-color: #ffffff;
+	color: #000000;
+	border: 1px solid #ffffff;
+	text-decoration: none;
+	padding: 3px;
+	font-weight: bold;
+}
+
+.atom, .bond, .arrow, .wall {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.center {text-align: center;}
+
+#loading {
+	font-size: xx-large;
+	color: red;
+	overflow: hidden;
+}
+
+#arena-container {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 515px;
+	height: 490px;
+}
+
+#arena {
+	position: relative;
+	margin: 5px;
+}
+
+#control-container {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+
+#molecule-container {
+	margin: 5px;
+	width: 355px;
+	height: 345px;
+}
+
+#molecule {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	cursor: move;
+}
+
+#move-controls {
+	padding-top: 20px;
+	text-align: center;
+}
+
+#move-controls p a {
+	display: block;
+	width: 100px;
+	margin: 0 auto;
+}
+
+#footer {
+	position: absolute;
+	width:900px;
+	bottom: 0;
+}
+
+#controls {
+	text-align: left;
+	float: left;
+	padding: 5px;
+}
+
+#levelset-credits {
+	text-align: center;
+	font-weight: bold;
+	font-size: smaller;
+}
+
+#selectors {}
+
+.hide-selector {
+  display: none;
+}
+
+#game-credits {
+	width: 270px;
+	text-align: center;
+	float: right;
+	padding: 5px;
+}
+
+#blurb {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+/*  Modal Dialogs */
+
+/*
+  This element is dynamically created. There is only one per page.
+  xModalDialog assumes this class name. It is used to grey out
+  the page when modal dialogs are displayed.
+*/
+.xModalDialogGreyElement, .xShieldElement{
+  position: absolute;
+  overflow: hidden;
+  width: 10px; height: 10px;
+  left: -10px; top: -10px;
+  z-index: 100;
+  opacity: .3; /* CSS3 */
+  background-color: #000;
+  filter: alpha(opacity=30);
+}
+
+.xxModalDialog {
+  position: absolute;
+
+  overflow: auto;
+  left: -50000px;
+  top: 0px;
+
+  width: 400px;
+  padding: 1em;
+  color: #000000;
+  background-color: #FFF;
+  border: 2px solid #000000;
+  z-index: 99;
+  text-align: center;
+}
+
+#about-dialog {
+  position: absolute;
+  left: -50000px;
+}
+
+#success-dialog {
+  position: absolute;
+  left: -50000px;
+}
+
+
+#ajax-dialog {
+  position: absolute;
+  left: -50000px;
+}
+
+#bookmark-dialog {
+  position: absolute;
+  left: -50000px;
+}
+
+.solutions-table {
+  margin: auto;
+}
+
+.solutions-table td, .solutions-table th {
+  border: 1px #ccc solid;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  vertical-align: middle;
+}
+
+.solutions-table tr {
+	border: hidden;
+}
+
+tr.no-border, tr.no-border td {
+  border: hidden;
+}
+
+#lastupdated {
+  font-size: smaller;
+  text-align: center;
+  font-style: italic;
+}
+
+#sdf-promotion {
+  font-size: large;
+  font-weight: bold;
+}
+
+.recent-status-img {
+  margin: 0px;
+  padding: 0px;
+  height: 22px;
+  width: 22px;
+  vertical-align: middle;
+}
+
+.emblem {
+	height: 22px;
+	width: 22px;
+}
